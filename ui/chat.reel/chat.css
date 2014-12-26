@@ -9,79 +9,50 @@ body, html
 
 .Chat
 {
-    display:-webkit-flex;
-    display:flex;
-
-    flex-direction: column;
-    -webkit-flex-direction: column;
 
     height: 100%;
 }
 
 .Chat-header
 {
-    height: 25px;
+    height: 5%;
 }
 
 .Chat-mainContent
 {
-    flex:1;
-    -webkit-flex: 1;
-
-    display:-webkit-flex;
-    display:flex;
-
-    flex-direction: row;
-    -webkit-flex-direction: row;
+    height: 95%
 }
 
 .Chat-mainContent-userList
 {
-    -webkit-animation:RoomListShowKeyFrame 1s;
-    flex:0 0 130px;
-    -webkit-flex: 0 0 130px;
+    width: 24%;
+    float: left;
+    vertical-align: top;
+    height: 100%;
 }
 
 .Chat-mainContent-contentArea
 {
-    flex:1;
-    -webkit-flex: 1;
 
+    width: 75%;
     border-left: 2px solid;
     border-right: 2px solid;
     border-color:#efefef;
-
-    flex-direction: column;
-    -webkit-flex-direction: column;
-
-    display:-webkit-flex;
-    display:flex;
-
+    float: left;
     background-color:#eeeecc;
+    height: 100%;
+    display: table;
 
 }
 
 .Chat-mainContent-contentArea-messageList
 {
     padding-top: 6px;
-    display:-webkit-flex;
-    display:flex;
-
-    flex-direction: column;
-    -webkit-flex-direction: column;
-
-    flex:1;
-    -webkit-flex: 1;
+    height: 90%;
+    display: table-row;
 }
 
 .Chat-mainContent-contentArea-postMessage
 {
-    display:-webkit-flex;
-    display:flex;
-
-    flex-direction: row;
-    -webkit-flex-direction: row;
-
-    flex:0 0 50px;
-    -webkit-flex:0 0 50px;
+    height: 10%;
 }
