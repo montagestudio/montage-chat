@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="chat-message-list.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            }
+        },
+		"rangeController":{
+                 "prototype": "montage/core/range-controller",
+                 "properties": {
+			     },
+			     "bindings": {
+				"content": { "<-": "@owner.data" }
+			}
+          },
+
+		"list": {
+			"prototype": "montage/ui/repetition.reel",
+			"properties": {
+				"element": { "#": "list" },
+				"contentController": {"@": "rangeController"}
+			}
+		},
+		"item": {
+			"prototype": "ui/chat-message-list-item.reel",
+			"properties": {
+				"element": { "#": "item" }
+			},
+			"bindings": {
+				"value": { "<-": "@list:iteration.object" }
+			}
+		}
+    }
+    </script>
+</head>
+<body>
+<div data-montage-id="owner" class="ChatMessageList">
+    <div data-montage-id="list" class="ChatMessageList-list">
+        <li data-montage-id="item" class="ChatMessageList-list-item"></li>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.ChatMessageList {
+}
+
+.ChatMessageList-list {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.ChatMessageList-list-item{
+    padding: 2px;
+
+}

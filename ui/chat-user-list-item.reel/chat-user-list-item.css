@@ -1,0 +1,9 @@
+.ChatUserListItem {
+    padding: 3px;
+}
+
+.ChatUserListItem-userName
+{
+    display:inline-block;
+    padding-left: 3px;
+}

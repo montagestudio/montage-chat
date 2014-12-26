@@ -1,0 +1,58 @@
+body, html
+{
+    height: 100%;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.Chat
+{
+
+    height: 100%;
+}
+
+.Chat-header
+{
+    height: 5%;
+}
+
+.Chat-mainContent
+{
+    height: 95%
+}
+
+.Chat-mainContent-userList
+{
+    width: 24%;
+    float: left;
+    vertical-align: top;
+    height: 100%;
+}
+
+.Chat-mainContent-contentArea
+{
+
+    width: 75%;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-color:#efefef;
+    float: left;
+    background-color:#eeeecc;
+    height: 100%;
+    display: table;
+
+}
+
+.Chat-mainContent-contentArea-messageList
+{
+    padding-top: 6px;
+    height: 90%;
+    display: table-row;
+}
+
+.Chat-mainContent-contentArea-postMessage
+{
+    height: 10%;
+}
