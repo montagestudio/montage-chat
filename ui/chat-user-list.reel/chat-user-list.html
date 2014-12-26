@@ -2,7 +2,7 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="chat-room-message-list.css">
+    <link rel="stylesheet" type="text/css" href="chat-user-list.css">
     <script type="text/montage-serialization">
     {
         "owner": {
@@ -11,23 +11,21 @@
             }
         },
 		"rangeController":{
-                 "prototype": "montage/core/range-controller",
-                 "properties": {
-			     },
-			     "bindings": {
-				"content": { "<-": "@owner.data" }
+			"prototype": "montage/core/range-controller",
+			"bindings": {
+				"content": { "<-": "@owner.contentController.userList" }
 			}
-          },
-
+		},
 		"list": {
 			"prototype": "montage/ui/repetition.reel",
 			"properties": {
 				"element": { "#": "list" },
+				"isSelectionEnabled": false,
 				"contentController": {"@": "rangeController"}
 			}
 		},
 		"item": {
-			"prototype": "ui/chat-room-message-list-item.reel",
+			"prototype": "ui/chat-user-list-item.reel",
 			"properties": {
 				"element": { "#": "item" }
 			},
@@ -36,12 +34,11 @@
 			}
 		}
     }
-
     </script>
 </head>
 <body>
-<div data-montage-id="owner" class="ChatRoomMessageList">
-    <div data-montage-id="list" class="ChatRoomMessageList-list">
+<div data-montage-id="owner" class="ChatUserList">
+    <div data-montage-id="list">
         <li data-montage-id="item"></li>
     </div>
 </div>

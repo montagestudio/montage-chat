@@ -1,15 +1,15 @@
 /**
- * @module ui/chat-room-post-message.reel
+ * @module ui/chat-post-message.reel
  */
 var Component = require("montage/ui/component").Component;
 
 /**
- * @class ChatRoomPostMessage
+ * @class ChatPostMessage
  * @extends Component
  */
-exports.ChatRoomPostMessage = Component.specialize(/** @lends ChatRoomPostMessage# */ {
+exports.ChatPostMessage = Component.specialize(/** @lends ChatPostMessage# */ {
     constructor: {
-        value: function ChatRoomPostMessage() {
+        value: function ChatPostMessage() {
             this.super();
         }
     },

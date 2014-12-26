@@ -11,16 +11,16 @@
             }
         },
         "header": {
-            "prototype": "ui/chat-room-header.reel",
+            "prototype": "ui/chat-header.reel",
             "properties": {
                 "element": {"#": "header"}
             },
             "bindings": {
-                "data": { "<-": "@owner.chatRoomTitle" }
+                "data": { "<-": "@owner.chatTitle" }
             }
         },
         "messageList": {
-            "prototype": "ui/chat-room-message-list.reel",
+            "prototype": "ui/chat-message-list.reel",
             "properties": {
                 "element": {"#": "messageList"}
             },
@@ -29,13 +29,13 @@
             }
         },
         "postMessage": {
-            "prototype": "ui/chat-room-post-message.reel",
+            "prototype": "ui/chat-post-message.reel",
             "properties": {
                 "element": {"#": "postMessage"}
             }
         },
         "userList": {
-            "prototype": "ui/chat-room-user-list.reel",
+            "prototype": "ui/chat-user-list.reel",
             "properties": {
                 "element": {"#": "userList"}
             },
@@ -47,13 +47,13 @@
     </script>
 </head>
 <body>
-    <div data-montage-id="owner" class="ChatRoom" data-montage-skin="light">
-        <div data-montage-id="header"></div>
-        <div class="ChatRoom-mainContent">
-            <div data-montage-id="userList" class="ChatRoom-mainContent-userList"></div>
-            <div class="ChatRoom-mainContent-contentArea">
-                <div data-montage-id="messageList" class="ChatRoom-mainContent-contentArea-messageList"></div>
-                <div data-montage-id="postMessage" class="ChatRoom-mainContent-contentArea-postMessage"></div>
+    <div data-montage-id="owner" class="Chat" data-montage-skin="light">
+        <div data-montage-id="header" class="Chat-header"></div>
+        <div class="Chat-mainContent">
+            <div data-montage-id="userList" class="Chat-mainContent-userList"></div>
+            <div class="Chat-mainContent-contentArea">
+                <div data-montage-id="messageList" class="Chat-mainContent-contentArea-messageList"></div>
+                <div data-montage-id="postMessage" class="Chat-mainContent-contentArea-postMessage"></div>
             </div>
         </div>
     </div>

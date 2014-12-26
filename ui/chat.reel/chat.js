@@ -1,17 +1,17 @@
 /**
- * @module ui/chat-room.reel
+ * @module ui/chat.reel
  * @requires montage/ui/component
  */
 var Component = require("montage/ui/component").Component,
     ChatService = require("core/chat-service").ChatService;
 
 /**
- * @class ChatRoom
+ * @class Chat
  * @extends Component
  */
 exports.Chat = Component.specialize(/** @lends ChatRoom# */ {
     constructor: {
-        value: function ChatRoom() {
+        value: function Chat() {
             this.super();
             this.messageListData = [];
         }
@@ -37,7 +37,7 @@ exports.Chat = Component.specialize(/** @lends ChatRoom# */ {
         value: null
     },
 
-    chatRoomTitle: {
+    chatTitle: {
         value: null
     },
 
@@ -57,12 +57,16 @@ exports.Chat = Component.specialize(/** @lends ChatRoom# */ {
         value: function () {
             if (this.chatService && this.chatService.messageContent) {
                 var currentDate = this.chatService.messageTime;
-                var dateTime = currentDate.getFullYear() + '/'
+                /*var dateTime = currentDate.getFullYear() + '/'
                     + (currentDate.getMonth() + 1) + '/'
                     + currentDate.getDate() + ' '
                     + currentDate.getHours() + ':'
                     + currentDate.getMinutes() + ':'
                     + currentDate.getSeconds();
+                    */
+                var dateTime = ((currentDate.getHours()<10 ? '0' : '') + currentDate.getHours()) + ':'
+                    + ((currentDate.getMinutes()<10 ? '0' : '') + currentDate.getMinutes()) + ':'
+                    + ((currentDate.getSeconds()<10 ? '0' : '') + currentDate.getSeconds());
                 var messageParts = this.chatService.messageFrom.split('/');
                 var messageAuthor = messageParts.length > 1 ? messageParts[1] : this.chatService.messageFrom;
                 this.messageListData.push(
@@ -81,24 +85,24 @@ exports.Chat = Component.specialize(/** @lends ChatRoom# */ {
             var self = this;
             this.chatService.connect(function (stat) {
                 if (stat == Strophe.Status.CONNECTING) {
-                    self.chatRoomTitle = 'Connecting to server';
+                    self.chatTitle = 'Connecting to server';
                 } else if (stat == Strophe.Status.CONNFAIL) {
-                    self.chatRoomTitle = 'Failed to connect server';
+                    self.chatTitle = 'Failed to connect server';
                 } else if (stat == Strophe.Status.DISCONNECTING) {
-                    self.chatRoomTitle = 'Disconnecting from server';
+                    self.chatTitle = 'Disconnecting from server';
                 } else if (stat == Strophe.Status.DISCONNECTED) {
-                    self.chatRoomTitle = 'Disconnected from server';
+                    self.chatTitle = 'Disconnected from server';
                 } else if (stat == Strophe.Status.CONNECTED) {
-                    self.chatRoomTitle = 'Connecting to room ' + self.chatRoomName;
+                    self.chatTitle = 'Connecting to room ' + self.chatRoomName;
                     self.chatService.createRoom(function () {
-                        self.chatRoomTitle = 'You are in the room ' + self.chatRoomName + ' now';
+                        self.chatTitle = 'You are in the room ' + self.chatRoomName + ' now';
                     }, function (errorMsg) {
-                        self.chatRoomTitle = 'Failed to connect room ' + self.chatRoomName + ', message:' + errorMsg;
+                        self.chatTitle = 'Failed to connect room ' + self.chatRoomName + ', message:' + errorMsg;
                         //self.chatRoomTitle = 'You are in the room ' + self.chatRoomName + ' now';
                     });
                 }
                 else {
-                    self.chatRoomTitle = 'Unknown status: ' + stat;
+                    self.chatTitle = 'Unknown status: ' + stat;
                 }
             });
         }

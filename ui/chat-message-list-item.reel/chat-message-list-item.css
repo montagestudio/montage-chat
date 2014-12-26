@@ -1,0 +1,27 @@
+.ChatMessageListItem {
+    background-color: #fbfbfb;
+    position: relative;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.ChatMessageListItem-userName {
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    flex: 0 0 100px;
+    -webkit-flex: 0 0 100px;
+}
+
+.ChatMessageListItem-userName-postTime {
+    color: #bbbbbb;
+}
+
+.ChatMessageListItem-message {
+    background-color: #ffffff;
+    padding: 3px;
+    font-size: 16px;
+    word-wrap: break-all;
+    flex: 1;
+    -webkit-flex: 1;
+    vertical-align: bottom;
+}
