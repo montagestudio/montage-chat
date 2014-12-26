@@ -1,4 +1,7 @@
-montage-chat
+
+Chatroom Component with XMPP server
 ============
 
-Project creating a client using XMPP and targeting initially OpenFire
+Will build a montagejs chatroom compoennt with a XMPP server.
+
+
