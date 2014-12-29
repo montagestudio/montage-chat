@@ -10,7 +10,8 @@
     },
     "exclude": [
         "run-tests.html",
-        "test"
+        "test",
+        "xmppserver"
     ],
     "bundle": [ "ui/main.reel" ]
 }
