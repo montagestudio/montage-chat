@@ -2,8 +2,8 @@ Install XMPP server on Linux platform
 ==============
 
 ## Notice: the following operation must be done by root user.
-  The install has been downloaded here. And you can download it from [here](http://igniterealtime.org/downloads/index.jsp);
-### The steps is as follows:
+  The install package has been downloaded here. And you can download it from [here](http://igniterealtime.org/downloads/index.jsp);
+### The steps are as follows:
     A. copy the openfire_3_9_3.tar.gz to /usr/local;
     B. enter /usr/local dir, run command: tar zxvf openfire_3_9_3.tar.gz;
     C. run command: cd openfire;
@@ -13,3 +13,4 @@ Install XMPP server on Linux platform
     you can finish the setting task on webpage step by step. In general, for database settings, we can use built-in database. other setting, you can set them as you need.
 
     After above steps, you can restart openfire and try the server with a client application, such as : Spark, Adium etc.
+  The picture is :![p1](p1.png).
