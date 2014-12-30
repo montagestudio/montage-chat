@@ -14,7 +14,7 @@ exports.ChatService = Montage.specialize({
             var self = this;
             self.init();
             window.onbeforeunload = function () {
-                var lconn=self.connection;
+                var lconn = self.connection;
                 if (lconn) {
                     lconn.disconnect();
                 }
@@ -124,8 +124,7 @@ exports.ChatService = Montage.specialize({
                 else if (self.joinRoomFlag && jsonstr._type == "error") {
                     self.joinRoomFlag = false;
                     var errmsg = "Same user name in the room already. Please change your name or try again later.";
-                    if (self.joinRoomFailFunction)
-                    {
+                    if (self.joinRoomFailFunction) {
                         self.joinRoomFailFunction(errmsg);
                         self.joinRoomFailFunction = null;
                     }
@@ -171,12 +170,9 @@ exports.ChatService = Montage.specialize({
             var jsonstr = self.xml2json.xml2json(preXML);
             var username = Strophe.getResourceFromJid(jsonstr._from);
             if (jsonstr._type == "unavailable") {
-                for (var i = 0, len = self.userList.length; i < len; i++) {
-                    if (self.userList[i] == username) {
-                        self.userList.splice(i, 1);
-                        break;
-                    }
-                }
+                var idx = self.userList.indexOf(username);
+                if (idx >= 0)
+                    self.userList.splice(idx, 1);
             }
             else if (jsonstr._type == "error") {
                 if (self.joinRoomFailFunction) {
@@ -187,15 +183,8 @@ exports.ChatService = Montage.specialize({
                 self.joinRoomSuccessFunction = null;
             }
             else {
-                //self.userList.push(username);
-                var found = false;
-                for (var i = 0, len = self.userList.length; i < len; i++) {
-                    if (self.userList[i] == username) {
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) {
+                var idx = self.userList.indexOf(username);
+                if (idx < 0) {
                     self.userList.push(username);
                 }
             }
@@ -288,4 +277,5 @@ exports.ChatService = Montage.specialize({
                 log("You didn't connect to server yet.");
         }
     }
-});
+})
+;
