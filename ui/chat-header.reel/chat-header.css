@@ -1,0 +1,12 @@
+.ChatHeader {
+    background-color:#333333;
+}
+
+.ChatHeader-header{
+    color:#ffffff;
+    text-align: center;
+    margin: 0px;
+    padding: 5px 0px;
+    font-weight: bold;
+    font-size: 14px;
+}
