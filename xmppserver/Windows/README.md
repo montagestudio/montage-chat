@@ -14,5 +14,3 @@ Install XMPP server on Windows platform
     you can finish the setting task on webpage step by step. In general, for database settings, we can use built-in database. other setting, you can set them as you need.
 
     After above steps, you can restart openfire and try the server with a client application, such as : Spark, Adium etc.
-
-Also it’s ready for Montage-chat component.

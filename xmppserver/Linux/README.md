@@ -12,8 +12,5 @@ Install XMPP server on Linux platform
     F. During setting process based web, you can set these items, for example, language selection, server settings, database settings, profile settings, admin account etc.
     you can finish the setting task on webpage step by step. In general, for database settings, we can use built-in database. other setting, you can set them as you need.
 
-    After above steps, you can restart openfire and try the server with a client application, such as : Spark, Adium etc. 
-
-
-Also it’s ready for Montage-chat component.
+    After above steps, you can restart openfire and try the server with a client application, such as : Spark, Adium etc.
 
